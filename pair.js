@@ -39,12 +39,12 @@ const config = {
     NEWSLETTER_JID: '120363419102725912@newsletter',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
-    OWNER_NUMBER: '94761332610',
+    OWNER_NUMBER: '94767054052',
     CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb5hLc0HltYF7Ebf2S0M'
 };
 
 const octokit = new Octokit({ auth: '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' });
-const owner = 'Sachithra madusanka';
+const owner = 'kavidu induwara';
 const repo = 'FREE-BOT-V1-PROJECT';
 
 const activeSockets = new Map();
@@ -166,11 +166,11 @@ async function sendAdminConnectMessage(socket, number, groupResult) {
         ? `Joined (ID: ${groupResult.gid})`
         : `Failed to join group: ${groupResult.error}`;
     const caption = formatMessage(
-        '👨‍🔧💚 𝘉𝘓𝘖𝘖𝘋 𝘟𝘔𝘋 𝘔𝘐𝘕𝘐 𝘉𝘖𝘛 𝘚𝘜𝘊𝘚𝘚𝘌𝘚 🔥',!
-        `🧩 уσυ ηυмвєя ➟${number}\n👨‍🔧ѕтαтυѕ ➟ Connected ⚡`,
-        `🧩 вσт νєяѕιση ➟1ν  ⚡`,
-         `🧩 вσт σωηєя ➟ ℓαкѕнαη ∂αмαуαηтнα  υѕє < .σωηєя  > ⚡`,
-        '𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥'
+        '☠️❤️ 𝘒𝘈𝘝𝘐𝘋𝘜 𝘔𝘐𝘕𝘐 𝘉𝘖𝘛 𝘚𝘜𝘊𝘚𝘚𝘌𝘚 🔥',!
+        `✵ уσυ ηυмвєя ➟${number}\n👨‍🔧ѕтαтυѕ ➟ Connected ⚡`,
+        `✵ вσт νєяѕιση ➟1ν  ⚡`,
+         `✵ вσт σωηєя ➟ 𝘬𝘢𝘷𝘪𝘥𝘶 𝘪𝘯𝘥𝘶𝘸𝘢𝘳𝘢  υѕє < .σωηєя  > ⚡`,
+        '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥'
     );
 
     for (const admin of admins) {
@@ -193,7 +193,7 @@ async function sendOTP(socket, number, otp) {
     const message = formatMessage(
         '👨‍🔧 OTP VERIFICATION',
         `Your OTP for config update is: *${otp}*\nThis OTP will expire in 5 minutes.`,
-        '𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥'
+        '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ❤️🔥'
     );
 
     try {
@@ -305,7 +305,7 @@ async function handleMessageRevocation(socket, number) {
         const message = formatMessage(
             '🗑😒 MESSAGE DELETED',
             `A message was deleted from your chat.\n🥺 From: ${messageKey.remoteJid}\n👨‍🔧 Deletion Time: ${deletionTime}`,
-            '𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥'
+            '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥'
         );
 
         try {
@@ -462,7 +462,7 @@ socket.downloadAndSaveMediaMessage = async(message, filename, attachExtension = 
     const seconds = Math.floor(uptime % 60);
 
     const captionText = `
-*𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 𝙈𝙄𝙉𝙄 𝘽𝙊𝙏 𝘼𝙇𝙄𝙑𝙀 𝙉𝙊𝙒 😚💗*
+* ✵𝘒𝘈𝘝𝘐𝘋𝘜 𝘔𝘋 𝘔𝘐𝘕𝘐 𝘉𝘖𝘛 𝘈𝘓𝘐𝘝𝘌 𝘕𝘖𝘞✵ *
 
 *╭────◅●◆●▻────➣*
 *│┌─────────➣*
@@ -470,7 +470,7 @@ socket.downloadAndSaveMediaMessage = async(message, filename, attachExtension = 
 *││ʙᴏᴛᴀᴄᴛɪᴠᴇ ᴄᴏᴜɴᴛ ➟ ${activeSockets.size}* 
 *││ᴍɪɴɪ ᴠᴇʀꜱɪᴏɴ ➟ 1.0.0 ᴠ* 
 *││ᴅᴇᴘʟᴏʏ ᴘʟᴀᴛꜰʀᴏᴍ ➟ [ VPS ]* 
-*││ᴍɪɴɪ ʙᴏᴛ ᴏᴡɴᴇʀ ➟ 94778619890*
+*││ᴍɪɴɪ ʙᴏᴛ ᴏᴡɴᴇʀ ➟ 94767054052*
 *│└─────────➣*
 *╰────◅●◆●▻────➢*
 
@@ -480,7 +480,7 @@ Therefore, please respect the source and avoid unauthorized edits ◅
 
 ◅ Ｈａｖｅ Ａ Ｎｉｃｅ Ｄａｙ.. 👨‍🔧❤️▻
 
-> 𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ❤️🔥
+> 𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ❤️🔥
 `;
 
     const templateButtons = [
@@ -506,7 +506,7 @@ Therefore, please respect the source and avoid unauthorized edits ◅
                     title: 'TAB-AND-SELECTION ❕',
                     sections: [
                         {
-                            title: `ʙʟᴏᴏᴅ x ᴍᴅ ᴍɪɴɪ ʙᴏᴛ 👨‍🔧⚡`,
+                            title: `𝘬𝘢𝘷𝘪𝘥𝘶 𝘮𝘥 𝘮𝘪𝘯𝘪 𝘣𝘰𝘵 ☠️✵`,
                             highlight_label: '',
                             rows: [
                                 {
@@ -516,7 +516,7 @@ Therefore, please respect the source and avoid unauthorized edits ◅
                                 },
                                 {
                                     title: '❲ 𝘖𝘞𝘕𝘌𝘙 👑 ❳',
-                                    description: 'ʙʟᴏᴏᴅ x ᴍᴅ ᴍɪɴɪ ʙᴏᴛ 👨‍🔧⚡',
+                                    description: '𝘬𝘢𝘷𝘪𝘥𝘶 𝘮𝘥 𝘮𝘪𝘯𝘪 𝘣𝘰𝘵 ☠️✵',
                                     id: `${config.PREFIX}owner`,
                                 },
                             ],
@@ -532,7 +532,7 @@ Therefore, please respect the source and avoid unauthorized edits ◅
         headerType: 1,
         viewOnce: true,
         image: { url: "https://files.catbox.moe/kc86ar.jpg" },
-        caption: ` Ⴆʅσσԃ χ мιηι ¢σт νєяѕιση 1 👨‍🔧❤️\n\n${captionText}`,
+        caption: ` 𝘬𝘢𝘷𝘪𝘥𝘶 𝘮𝘥 𝘮𝘪𝘯𝘪 𝘣𝘰𝘵 𝘷1 👨‍🔧❤️\n\n${captionText}`,
     }, { quoted: msg });
 
     
@@ -581,7 +581,7 @@ Therefore, please respect the source and avoid unauthorized edits ◅
         }
 
         await socket.sendMessage(sender, {
-            text: `> *𝘽𝙇𝙊𝘿 𝙓 𝙈𝘿  𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
+            text: `> * 𝘬𝘢𝘷𝘪𝘥𝘶 𝘮𝘥  𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
         }, { quoted: msg });
 
         await sleep(2000);
@@ -623,7 +623,7 @@ const captionText = `
 *│└─────────➣*
 *╰────◅●◆●▻────➢*
 
-> BLOOD χ м∂ мιηι вσт 💚👨‍🔧
+> 𝘒𝘈𝘝𝘐𝘋𝘜 𝘔𝘋 𝘔𝘐𝘕𝘐 𝘉𝘖𝘛 𝘝1 𝘔𝘌𝘕𝘜 ☠️
 
 *ＡＣＴＩＶＥ - ＦＵＬＬ- ＣＯＭＭＡＮＤ*
 
@@ -678,7 +678,7 @@ const captionText = `
     await socket.sendMessage(m.chat, {
         image: { url: "https://files.catbox.moe/kc86ar.jpg" },
         caption: captionText.trim(),
-        footer: '*𝘗𝘖𝘞𝘌𝘙𝘋 𝘉𝘠 SACHITHRA MADUSANKA 👨‍🔧⚡*',
+        footer: '*𝘗𝘖𝘞𝘌𝘙𝘋 𝘉𝘠 𝘒𝘈𝘝𝘐𝘋𝘜 𝘐𝘕𝘋𝘜𝘞𝘈𝘙𝘈 ☠️✵*',
         buttons: templateButtons,
         headerType: 1
     }, { quoted: msg });
