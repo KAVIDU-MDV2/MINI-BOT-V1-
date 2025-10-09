@@ -770,10 +770,10 @@ case 'ping': {
     const start = Date.now();
 
     const loading = await socket.sendMessage(m.chat, {
-        text: "ʙʟᴏᴏᴅ - x - ᴍᴅ - ᴍɪɴɪ ꜱɪɢɴᴀʟ 👨‍🔧💚🛰️"
+        text: "ᴋᴀᴠɪᴅᴜ - ᴍᴅ - ᴍɪɴɪ ꜱɪɢɴᴀʟ 👨‍🔧💚🛰️"
     }, { quoted: msg });
 
-    const stages = ["◍○○○○", "◍◍○○○", "◍◍◍○○", "◍◍◍◍○", "◍◍◍◍◍"];
+    const stages = ["☛", "☛☛", "☛☛☛", "☛☛☛☛", "☛☛☛☛☛"];
     for (let stage of stages) {
         await socket.sendMessage(m.chat, { text: stage, edit: loading.key });
         await new Promise(r => setTimeout(r, 250));
@@ -783,7 +783,7 @@ case 'ping': {
     const ping = end - start;
 
     await socket.sendMessage(m.chat, {
-        text: `*BLOOD 𝘟 𝘔𝘐𝘕𝘐 𝘗𝘐𝘕𝘎* ▻ \`2.01ms\`\n\n ʙᴏᴛ ɪꜱ ᴀᴄᴛɪᴠᴇ ᴛᴏ ꜱɪɢɴᴀʟ🚀*`,
+        text: `*ᴋᴀᴠɪᴅᴜ 𝘟 𝘔𝘐𝘕𝘐 𝘗𝘐𝘕𝘎* ▻ \`2.01ms\`\n\n ʙᴏᴛ ɪꜱ ᴀᴄᴛɪᴠᴇ ᴛᴏ ꜱɪɢɴᴀʟ🚀*`,
         edit: loading.key
     });
 
@@ -808,14 +808,14 @@ case 'aiimage': {
 
   if (!prompt) {
     return await socket.sendMessage(sender, {
-      text: '👨‍🔧💚 *Please provide a prompt to generate an AI image.*'
+      text: '✵ *Please provide a prompt to generate an AI image.*'
     });
   }
 
   try {
     // Notify that image is being generated
     await socket.sendMessage(sender, {
-      text: '🧠 *𝘊𝘙𝘌𝘈𝘛𝘐𝘕𝘎 𝘈𝘐 𝘐𝘔𝘈𝘎𝘌 𝘉𝘠 BLOOD 𝘟 𝘔𝘐𝘕𝘐 💚*',
+      text: '🧠 *𝘊𝘙𝘌𝘈𝘛𝘐𝘕𝘎 𝘈𝘐 𝘐𝘔𝘈𝘎𝘌 𝘉𝘠 𝘒𝘈𝘝𝘐𝘋𝘜 𝘔𝘐𝘕𝘐 ❤️*',
     });
 
     // Build API URL
@@ -837,7 +837,7 @@ case 'aiimage': {
     // Send the image
     await socket.sendMessage(sender, {
       image: imageBuffer,
-      caption: `🧠👨‍🔧💚 ʙʟᴏᴏᴅ x ᴍᴅ ᴍɪɴɪ ᴀɪ ɪᴍᴀɢᴇ \n\n❤️ ᴘʀᴏᴍᴘᴛ ➟ ${prompt}`
+      caption: `✵☛ 𝙺𝙰𝚅𝙸𝙳𝚄 ᴍɪɴɪ ᴀɪ ɪᴍᴀɢᴇ \n\n❤️ ᴘʀᴏᴍᴘᴛ ➟ ${prompt}`
     }, { quoted: msg });
 
   } catch (err) {
@@ -857,7 +857,7 @@ case 'gossip':
         
         const response = await fetch('https://suhas-bro-api.vercel.app/news/gossiplankanews');
         if (!response.ok) {
-            throw new Error('ᴀᴘɪ ᴇʀʀᴏʀ 🥺');
+            throw new Error('ᴀᴘɪ ᴇʀʀᴏʀ 😔');
         }
         const data = await response.json();
 
@@ -894,15 +894,15 @@ case 'gossip':
         await socket.sendMessage(sender, {
             image: { url: thumbnailUrl },
             caption: formatMessage(
-                'BLOOD 𝘟 𝘔𝘋 𝘔𝘐𝘕𝘐 𝘎𝘖𝘚𝘐𝘗 𝘕𝘌𝘞𝘚 ♨️',
+                '𝘒𝘈𝘝𝘐𝘋𝘜 𝘔𝘋 𝘔𝘐𝘕𝘐 𝘎𝘖𝘚𝘐𝘗 𝘕𝘌𝘞𝘚 ♨️',
                 `💚➟  *${title}*\n\n${desc}\n\n💚➟ *𝘋𝘈𝘛𝘌* ➟ ${date || 'තවම ලබාදීලා නැත'}\n💚➟  *𝘓𝘐𝘕𝘓* ➟ ${link}`,
-                'BLOOD-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🤍🔥'
+                '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🤍🔥'
             )
         });
     } catch (error) {
         console.error(`Error in 'news' case: ${error.message}`);
         await socket.sendMessage(sender, {
-            text: '⚠️ නිව්ස් ගන්න බැරි වුණා සුද්දෝ! 😩 යමක් වැරදුණා වගේ.'
+            text: '⚠️ නිව්ස් ගන්න බැරි වුණා සුද්දෝ! 😩 පොඩ්ඩක් හිකිලා ඉන්නෙ එකයි.'
         });
     }
 					
@@ -929,9 +929,9 @@ case 'gossip':
         await socket.sendMessage(sender, {
             image: { url: thumbnailUrl },
             caption: formatMessage(
-                'BLOOD 𝘟 𝘔𝘋 𝘔𝘐𝘕𝘐 𝘕𝘈𝘚𝘈 𝘕𝘌𝘞𝘚 ♨️',
+                '𝘒𝘈𝘝𝘐𝘋𝘜 𝘔𝘋 𝘔𝘐𝘕𝘐 𝘕𝘈𝘚𝘈 𝘕𝘌𝘞𝘚 ♨️',
                 `♻️  *${title}*\n\n${explanation.substring(0, 200)}...\n\n♻️ *𝘋𝘈𝘛𝘌* ➟ ${date}\n${copyright ? ` *🫟𝘊𝘙𝘌𝘋𝘐𝘛𝘌*  ➟ ${copyright}` : ''}\n*🫟𝘓𝘐𝘕𝘒 ➟*: https://apod.nasa.gov/apod/astropix.html`,
-                'BLOOD-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🤍🔥'
+                '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🤍🔥'
             )
         });
 
@@ -967,14 +967,14 @@ case 'gossip':
                         console.log('Sending message to user...');
                         await socket.sendMessage(sender, {
                             text: formatMessage(
-                                '*BLOOD 𝘟 𝘔𝘋 𝘊𝘙𝘐𝘊𝘒𝘌𝘛 𝘕𝘌𝘞𝘚 🏆',
+                                '*𝘒𝘈𝘉𝘐𝘋𝘜 𝘔𝘋 𝘔𝘋 𝘊𝘙𝘐𝘊𝘒𝘌𝘛 𝘕𝘌𝘞𝘚 🏆',
                                 `♦ *${title}*\n\n` +
                                 `♦ *𝘔𝘈𝘙𝘒*: ${score}\n` +
                                 `♦ *𝘛𝘖 𝘞𝘐𝘕*: ${to_win}\n` +
                                 `♦ *𝘙𝘈𝘛𝘌*: ${crr}\n\n` +
                                 `♦ *𝘓𝘐𝘕𝘒*: ${link}`,
 								
-                                'BLOOD-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🤍🔥'
+                                '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🤍🔥'
                             )
                         });
                         console.log('Message sent successfully.');
@@ -1010,7 +1010,7 @@ case 'gossip':
 
     try {
         await socket.sendMessage(sender, {
-            text: '[ BLOOD X MD AUTOMATICALLY TIK TOK DOWNLODER ] ❤️'
+            text: '[ KAVIDU MD AUTOMATICALLY TIK TOK DOWNLODER ] ❤️'
         }, { quoted: msg });
 
         const apiUrl = `https://delirius-apiofc.vercel.app/download/tiktok?url=${encodeURIComponent(link)}`;
@@ -1034,7 +1034,7 @@ case 'gossip':
         const caption = `📥 *𝘠𝘖𝘜 𝘙𝘌𝘘𝘜𝘌𝘚𝘛 𝘛𝘐𝘒 𝘛𝘖𝘒 𝘝𝘐𝘋𝘌𝘖 *\n\n` +
                         `👤 *𝘜𝘚𝘌𝘙 ➟* ${author.nickname} (@${author.username})\n` +
                         `📂 *𝘛𝘐𝘛𝘛𝘓𝘌 ➟* ${title}\n` +
-                        `❤️ *𝘓𝘐𝘒𝘌𝘚* ➟ ${like}\n📋*𝘊𝘖𝘔𝘔𝘌𝘕𝘛𝘚 ➟* ${comment}\n🔀 *𝘚𝘏𝘌𝘙𝘙𝘚 ➟* ${share}\nBLOOD-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ❤️🔥`;
+                        `❤️ *𝘓𝘐𝘒𝘌𝘚* ➟ ${like}\n📋*𝘊𝘖𝘔𝘔𝘌𝘕𝘛𝘚 ➟* ${comment}\n🔀 *𝘚𝘏𝘌𝘙𝘙𝘚 ➟* ${share}\n𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ❤️🔥`;
 
         await socket.sendMessage(sender, {
             video: { url: video.org },
@@ -1070,7 +1070,7 @@ case 'jid': {
         switch (q) {
             case "me":
                 await socket.sendMessage(sender, {
-                    text: `👨‍🔧 *𝘽𝙊𝙏 𝙅𝙄𝘿 ➟ * ${socket.user?.id || "Unknown"}`
+                    text: `✵ *𝘽𝙊𝙏 𝙅𝙄𝘿 ➟ * ${socket.user?.id || "Unknown"}`
                 });
                 break;
 
@@ -1088,17 +1088,17 @@ case 'jid': {
                         `👤 *𝙎𝙀𝙉𝘿𝙀𝙍 ➟* ${quoted.sender || "Unknown"}\n` +
                         `👥 *𝙋𝙍𝘼𝘾𝙏𝙄𝙈𝙀𝙉𝙏 ➟* ${quoted.participant || "N/A"}\n` +
                         `💭 *𝘾𝙃𝘼𝙏 ➟* ${quoted.chat || chatJid}`
-					    `*BLOOD-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🔥*`
+					    `*KAVIDU-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🔥*`
                 });
 
             default:
                 await socket.sendMessage(sender, {
                     text:
-                        `📋 *𝙅𝙄𝘿 𝙄𝙉𝙁𝙊 ➟*\n\n` +
-                        `📂 *𝘾𝙃𝘼𝙏 𝙏𝙔𝙋𝙀 ➟* ${type}\n\n` +
-                        `⛓️ *𝘾𝙃𝘼𝙏 𝙅𝙄𝘿 ➟* ${chatJid}\n` +
-                        `💥 *𝙎𝙀𝙉𝘿𝘼𝙍 𝙅𝙄𝘿 ➟* ${senderJid}\n` +
-                        `❤️ *𝙋𝙍𝘼𝘾𝙄𝘾𝙎 𝙄𝘿 ➟* ${participantJid}`
+                        `✵ *𝙅𝙄𝘿 𝙄𝙉𝙁𝙊 ➟*\n\n` +
+                        `✵ *𝘾𝙃𝘼𝙏 𝙏𝙔𝙋𝙀 ➟* ${type}\n\n` +
+                        `✵ *𝘾𝙃𝘼𝙏 𝙅𝙄𝘿 ➟* ${chatJid}\n` +
+                        `✵ *𝙎𝙀𝙉𝘿𝘼𝙍 𝙅𝙄𝘿 ➟* ${senderJid}\n` +
+                        `✵ *𝙋𝙍𝘼𝘾𝙄𝘾𝙎 𝙄𝘿 ➟* ${participantJid}`
                 });
         }
     } catch (err) {
@@ -1151,7 +1151,7 @@ case 'jid': {
 
         const url = data.url;
         const desc = `
- [ *BLOOD 𝘟 𝘔𝘐𝘕𝘐 𝘝𝘖𝘐𝘊𝘌 𝘛𝘗𝘗 💚* ]
+ [ *𝘒𝘈𝘝𝘐𝘋𝘜 𝘔𝘋 𝘔𝘐𝘕𝘐 𝘝𝘖𝘐𝘊𝘌 𝘛𝘗𝘗 ❤️* ]
 
 📋 *ᴛɪᴛᴛʟᴇ ➟* ${data.title} ❤️
 
@@ -1159,7 +1159,7 @@ case 'jid': {
 
 📤 *ᴜᴘʟᴏᴛᴇᴅ ➟:* ${data.ago} ❤️
 
-> 𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥
+> 𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ☠️🔥
 `;
 
         await socket.sendMessage(sender, {
@@ -1171,7 +1171,7 @@ case 'jid': {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363419102725912@newsletter',
-                    newsletterName: "𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥",
+                    newsletterName: "𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ☠️🔥",
                     serverMessageId: 999
                 }
             }
@@ -1208,7 +1208,7 @@ case 'jid': {
 
     // Menu caption
     const menuCaption = `
-> ＨＩ-BLOOD-XMD-MINI-Ｖ1 ♠
+> ＨＩ-KAVIDU-MD-MINI-Ｖ1 ♠
 
 *╭────◅●◆●▻────➣*
 *│┌──────➣*
@@ -1216,18 +1216,17 @@ case 'jid': {
 *││ ʙᴏᴛᴀᴄᴛɪᴠᴇ ᴄᴏᴜɴᴛ ➟ ${activeSockets.size}*
 *││ ᴍɪɴɪ ᴠᴇʀꜱɪᴏɴ ➟ 1.0.0 ᴠ*
 *││ ᴅᴇᴘʟᴏʏ ᴘʟᴀᴛꜰʀᴏᴍ ➟ Heroku ❲ ꜰʀᴇᴇ ❳*
-*││ ᴍɪɴɪ ʙᴏᴛ ᴏᴡɴᴇʀ ➟ 94761332610*
+*││ ᴍɪɴɪ ʙᴏᴛ ᴏᴡɴᴇʀ ➟ 94767054052*
 *│└──────➣*
 *╰────◅●◆●▻────➢*
 
-🛡️ 𝗕𝗟𝗢𝗢𝗗 𝗫 𝗠𝗗 – 𝗔 𝗡𝗲𝘄 𝗘𝗿𝗮 𝗼𝗳 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 𝗕𝗼𝘁 ⚡
+🛡️ 𝗞𝗔𝗩𝗜𝗗𝗨 𝗠𝗗 – 𝗔 𝗡𝗲𝘄 𝗘𝗿𝗮 𝗼𝗳 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 𝗕𝗼𝘁 ⚡
 
-> 𝙊𝙬𝙣𝙚𝙧 𝙗𝙮 𝙎𝙖𝙘𝙝𝙞𝙩𝙝𝙧𝙖 𝙈𝙖𝙙𝙪𝙨𝙖𝙣𝙠𝙖
-> 𝘼𝙙𝙢𝙞𝙣 𝙗𝙮 𝙇𝙖𝙠𝙨𝙝𝙖𝙣 𝘿𝙖𝙢𝙖𝙮𝙖𝙣𝙩𝙝𝙖
+> 𝙊𝙬𝙣𝙚𝙧 𝙗𝙮 𝗸𝗮𝘃𝗶𝗱𝘂 𝗶𝗻𝗱𝘂𝘄𝗮𝗿𝗮
 
 ➤ 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄 𝐂𝐎𝐌𝐌𝐀𝐍𝐃
 
-> © 𝙱𝙻𝙾𝙾𝙳 𝚇𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃`;
+> © 𝙺𝙰𝚅𝙸𝙳𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃`;
 
     
     const verifiedContact = {
@@ -1238,8 +1237,8 @@ case 'jid': {
         },
         message: {
             contactMessage: {
-                displayName: "SACHITHRA MADUSANKA ✅",
-                vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: BLOOD XMD VERIFIED ✅\nORG:CASEYRHODES-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=94761332610:+94761332610\nEND:VCARD"
+                displayName: "KAVIDU INDUWARA ☠️",
+                vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: KAVIDU MD VERIFIED ✅\nORG:CASEYRHODES-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=94757054052:+94767054052\nEND:VCARD"
             }
         }
     };
@@ -1251,7 +1250,7 @@ case 'jid': {
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
             newsletterJid: '120363419102725912@newsletter',
-            newsletterName: 'BLOOD-XMD 👻',
+            newsletterName: 'KAVIDU-MD MINI ☠️',
             serverMessageId: 143
         }
     };
@@ -1260,17 +1259,17 @@ case 'jid': {
     const templateButtons = [
         {
             buttonId: `${config.PREFIX}alive`,
-            buttonText: { displayText: '❲ ALIVE 😻 ❳ ' },
+            buttonText: { displayText: '❲ ✵ALIVE ❳ ' },
             type: 1,
         },
         {
             buttonId: `${config.PREFIX}owner`,
-            buttonText: { displayText: '❲ OWNER 👑❳' },
+            buttonText: { displayText: '❲ ✵OWNER ❳' },
             type: 1,
         },
         {
             buttonId: `${config.PREFIX}mainmenu`,
-            buttonText: { displayText: '❲ MAIN MENU 📜 ❳' },
+            buttonText: { displayText: '❲ ✵MAIN MENU ❳' },
             type: 1,
         }
     ];
@@ -1294,9 +1293,9 @@ case 'jid': {
   
 			
 case 'owner': {
-    const ownerNumber = '+94761332610';
-    const ownerName = 'ꜱᴀᴄʜɪᴛʜʀᴀ ᴍᴀᴅᴜꜱᴀɴᴋᴀ';
-    const organization = '*𝘽𝙇𝙊𝙊𝘿  𝙓  𝙈𝘿 𝘽𝙊𝙏 𝘾𝙍𝙀𝘼𝙏𝙊𝙍 & 𝙊𝙒𝙉𝙀𝙍  💚👨‍🔧🔥*';
+    const ownerNumber = '+94767054052';
+    const ownerName = '𝙺𝙰𝚅𝙸𝙳𝚄 𝙸𝙽𝙳𝚄𝚆𝙰𝚁𝙰';
+    const organization = '*𝗞𝗔𝗩𝗜𝗗𝗨 𝙈𝘿 𝘽𝙊𝙏 𝘾𝙍𝙀𝘼𝙏𝙊𝙍 & 𝙊𝙒𝙉𝙀𝙍  💚👨‍🔧🔥*';
 
     const vcard = 'BEGIN:VCARD\n' +
                   'VERSION:3.0\n' +
@@ -1316,7 +1315,7 @@ case 'owner': {
 
         // Then send message with reference
         await socket.sendMessage(from, {
-            text: `*BLOOD X MINI BOT OWNER & CREATOR 👑*\n\n👨‍🔧 Name: ${ownerName}\n💭 ηυмвєя ➥ ${ownerNumber}\n\n> BLOOD-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🔥`,
+            text: `*KAVIDU MD MINI BOT OWNER & CREATOR 👑*\n\n👨‍🔧 Name: ${ownerName}\n💭 ηυмвєя ➥ ${ownerNumber}\n\n> 𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🔥`,
             contextInfo: {
                 mentionedJid: [`${ownerNumber.replace('+', '')}@s.whatsapp.net`],
                 quotedMessageId: sent.key.id
@@ -1398,8 +1397,8 @@ case 'spotify': {
     ];
 
     await socket.sendMessage(from, {
-      text: `🎵 ꜱᴇᴀʀᴄʜ ᴠɪᴅᴇᴏ ɪɴ ʀᴇꜱᴜʟᴛ 🧩*${q}*. Select a song below:`,
-      footer: '𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥',
+      text: `🎵 ꜱᴇᴀʀᴄʜ ᴠɪᴅᴇᴏ ɪɴ ʀᴇꜱᴜʟᴛ ✵*${q}*. Select a song below:`,
+      footer: '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ❤️🔥',
       buttons: templateButtons,
       headerType: 1
     }, { quoted: msg });
@@ -1434,14 +1433,14 @@ case 'spotifydown': {
     }
 
     const caption = `
-    [ 💚ＳＨＯＮＵ-Ｘ-ＭＩＮＩ-ＢＯＴ-ＳＰＯＴＩＦＹ-ＤＬ 💚 ]
+    [ ✵ＫＡＶＩＤＵ-ＭＤ-ＭＩＮＩ-ＢＯＴ-ＳＰＯＴＩＦＹ-ＤＬ ✵ ]
 📋 *𝘛𝘐𝘛𝘛𝘌𝘓 ➟* ${song.title}
 👤 *𝘈𝘜𝘛𝘏𝘖𝘙 ➟*  ${song.author}
 📂 *𝘈𝘓𝘉𝘜𝘔 ➟* ${song.album}
 ⌛ *𝘛𝘐𝘔𝘌 ➟* ${song.duration}
 📎 *𝘚𝘖𝘕𝘎 𝘓𝘐𝘕𝘒 ➟* ${url}
 
-𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥`;
+𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥`;
 
     const templateButtons = [
       {
@@ -1464,7 +1463,7 @@ case 'spotifydown': {
     await socket.sendMessage(from, {
       image: { url: song.image },
       caption,
-      foote𝘳: '𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙱𝙻𝙾𝙾𝙳 𝚇𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃👨‍🔧💚🔥',
+      foote𝘳: '𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙺𝙰𝚅𝙸𝙳𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃 ❤️🔥',
       buttons: templateButtons,
       headerType: 1,
     }, { quoted: msg });
@@ -1523,7 +1522,7 @@ case 'spadoc': {
       document: { url: url },
       mimetype: 'audio/mpeg',
       fileName: `${title}.mp3`,
-      caption: `*ꜱᴏɴɢ ᴛɪᴛᴛᴇʟ ➟ * ${title}\n 𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥`,
+      caption: `*ꜱᴏɴɢ ᴛɪᴛᴛᴇʟ ➟ * ${title}\n 𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ☠️🔥`,
       contextInfo: {
         externalAdReply: {
           title: 'Spotify Downloader',
@@ -1609,7 +1608,7 @@ case 'fancy': {
       .map(font => `*${font.name}:*\n${font.result}`)
       .join("\n\n");
 
-    const finalMessage = `Fancy Fonts Converter\n\n${fontList}\n\n_𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🤍🔥_`;
+    const finalMessage = `Fancy Fonts Converter\n\n${fontList}\n\n_𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ❤️🔥_`;
 
     await socket.sendMessage(sender, {
       text: finalMessage
@@ -1648,14 +1647,14 @@ case 'song': {
     const url = song.url;
     const thumb = song.thumbnail;
 
-    const caption = `ʙʟᴏᴏᴅ x ᴍᴅ ᴍɪɴɪ ʙᴏᴛ ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ 🎶
+    const caption = `ᴋᴀᴠɪᴅᴜ ᴍᴅ ᴍɪɴɪ ʙᴏᴛ ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ 🎶
 
 *📋 тιттℓє ➟* ${song.title}
 *🏮 ∂υяαтιση ➟* ${song.timestamp}
 *👤 ¢яєαтσя ➟* ${song.author.name}
 *📎 ѕσηg υяℓ ➟* ${url}
 
-> 𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥`;
+> 𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ☠️🔥`;
 
     const templateButtons = [
       {
@@ -1678,7 +1677,7 @@ case 'song': {
     await socket.sendMessage(from, {
       image: { url: thumb },
       caption: caption.trim(),
-      footer: '𝘉𝘓𝘖𝘖𝘋 𝘟 𝘔𝘋 𝘉𝘠 𝘚𝘈𝘊𝘏𝘐𝘛𝘏𝘙𝘈 𝘔𝘈𝘋𝘜𝘚𝘈𝘕𝘒𝘈👨‍🔧⚡',
+      footer: '𝘒𝘈𝘝𝘐𝘋𝘜 𝘔𝘋 𝘊𝘙𝘌𝘈𝘛𝘌 𝘉𝘠 𝘒𝘈𝘝𝘐𝘋𝘜 𝘐𝘕𝘋𝘜𝘞𝘈𝘙𝘈 ☠️👑',
       buttons: templateButtons,
       headerType: 1
     }, { quoted: msg });
@@ -1738,7 +1737,7 @@ case 'mp3doc': {
         await socket.sendMessage(sender, {
             document: { url: data.result.download_url },
             mimetype: "audio/mpeg",
-            fileName: `ꜱʜᴏɴᴜ x ᴍɪɴɪ ʙᴏᴛ ᴍᴘ3ᴅᴏᴄ 💚💆‍♂️🎧`
+            fileName: `ᴋᴀᴠɪᴅᴜ ᴍᴅ ᴍɪɴɪ ʙᴏᴛ ᴍᴘ3ᴅᴏᴄ 💆‍♂️🎧`
         }, { quoted: msg });
 
     } catch (err) {
@@ -1792,18 +1791,18 @@ case 'fb': {
   }
 
   try {
-    await socket.sendMessage(from, { react: { text: "⏳", key: msg.key } });
+    await socket.sendMessage(from, { react: { text: "☠️", key: msg.key } });
 
     const fb = await getFBInfo(args[0]);
     const url = args[0];
-    const caption = ` 💚 *𝘉𝘓𝘖𝘖𝘋 𝘟 𝘔𝘋 𝘔𝘐𝘕𝘐 𝘉𝘖𝘛 𝘍𝘉 𝘋𝘖𝘞𝘕𝘓𝘖𝘋𝘌𝘙* ❤️
+    const caption = ` ✵ *𝘒𝘈𝘝𝘐𝘋𝘜 𝘔𝘋 𝘔𝘐𝘕𝘐 𝘉𝘖𝘛 𝘍𝘉 𝘋𝘖𝘞𝘕𝘓𝘖𝘋𝘌𝘙* ✵
 
-💚 *Title:* ${fb.title}
-🧩 *URL:* ${url}
+✵ *Title:* ${fb.title}
+✵ *URL:* ${url}
 
-> 𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥
+> 𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ☠️🔥
 
-👨‍🔧💚 *¢ℓι¢к вυттση нєαяє*`;
+☛ *¢ℓι¢к вυттση нєαяє*`;
 
     const templateButtons = [
       {
@@ -1836,7 +1835,7 @@ case 'fb': {
     await socket.sendMessage(from, {
       image: { url: fb.thumbnail },
       caption: caption,
-      footer: '💚 Ⴆʅσσԃ χ м∂ мιηι ƒв ∂σωηℓσ∂єя 💚',
+      footer: '☛ кανι∂υ м∂ мιηι ƒв ∂σωηℓσ∂єя ☚',
       buttons: templateButtons,
       headerType: 4
     }, { quoted: msg });
@@ -1859,7 +1858,7 @@ case 'fbsd': {
     const res = await getFBInfo(url);
     await socket.sendMessage(from, {
       video: { url: res.sd },
-      caption: '💚 уσυ яєqυєѕт ѕ∂ νι∂єσ ву Ⴆʅσσԃ χ м∂ мιηι вσт 🧩🔥'
+      caption: '❤️ уσυ яєqυєѕт ѕ∂ νι∂єσ ву кανι∂υ м∂ мιηι вσт ☠️🔥'
     }, { quoted: msg });
   } catch (err) {
     console.error(err);
@@ -1879,7 +1878,7 @@ case 'fbhd': {
     const res = await getFBInfo(url);
     await socket.sendMessage(from, {
       video: { url: res.hd },
-      caption: '💚 уσυ яєqυєѕт н∂ νι∂єσ ву Ⴆʅσσԃ χ м∂ мιηι вσт 🧩🔥'
+      caption: '❤️ уσυ яєqυєѕт н∂ νι∂єσ ву кανι∂υ м∂ мιηι вσт ☠️🔥'
     }, { quoted: msg });
   } catch (err) {
     console.error(err);
@@ -1920,7 +1919,7 @@ case 'fbdoc': {
     await socket.sendMessage(from, {
       document: { url: res.sd },
       mimetype: 'audio/mpeg',
-      fileName: 'ʏᴏᴜ ʀᴇQᴜᴇꜱᴛ ꜰʙ_ᴀᴜᴅɪᴏ💆‍♂️💚🧩'
+      fileName: '☛ ʏᴏᴜ ʀᴇQᴜᴇꜱᴛ ꜰʙ_ᴀᴜᴅɪᴏ ☚'
     }, { quoted: msg });
   } catch (err) {
     console.error(err);
@@ -1955,7 +1954,7 @@ break;
 case 'niko': {
     try {
         const imageUrl = 'https://cdn.nekos.life/neko/neko217.png';
-        const captionText = '💚 [ ʙʟᴏᴏᴅ x ᴍɪɴɪ ʙᴏᴛ ɴɪᴋᴏ ᴀɴɪᴍᴇ ɪᴍᴀɢᴇ ]❤️';
+        const captionText = '💚 [ ᴷᴬⱽᴵᴰᵁ ᴹᴰ ᴍɪɴɪ ʙᴏᴛ ᴀɴɪᴍᴇ ɪᴍᴀɢᴇ ]❤️';
 
         await socket.sendMessage(m.chat, {
             image: { url: imageUrl },
@@ -1988,7 +1987,7 @@ case 'niko': {
                         caption: formatMessage(
                             '👨‍🔧⚡ SESSION DELETED',
                             '✅ Your session has been successfully deleted.',
-                            '𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥'
+                            '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ☠️🔥'
                         )
                     });
                     break;
@@ -2000,7 +1999,7 @@ case 'niko': {
                 caption: formatMessage(
                     '😒 ERROR',
                     'An error occurred while processing your command. Please try again.',
-                    '𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥'
+                    '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ☠️🔥'
                 )
             });
         }
@@ -2167,9 +2166,9 @@ function setupAutoRestart(socket, number) {
                     await socket.sendMessage(jidNormalizedUser(socket.user.id), {
                         image: { url: config.RCD_IMAGE_PATH },
                         caption: formatMessage(
-                            '👨‍🔧 SESSION DELETED ⚡',
+                            '👨‍🔧 SESSION DELETED ☠️',
                             '✅ Your session has been deleted due to logout.',
-                            '𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥'
+                            '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ☠️🔥'
                         )
                     });
                 } catch (error) {
@@ -2311,7 +2310,7 @@ async function EmpirePair(number, res) {
                         caption: formatMessage(
                             '❤️ ➥ ωєℓ¢σмє тσ 𝘣𝘭𝘰𝘰𝘥 χ м∂ мιηι вσт νєяѕιση 1 🔥',
                             `💚 𝘊𝘖𝘕𝘌𝘊𝘛𝘌𝘋 𝘋𝘖𝘕𝘌 💯\n\n🤍 𝙽𝚄𝙼𝙱𝙴𝚁 ➥ ${sanitizedNumber}\n`,
-                            '𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ❤️🔥'
+                            '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ❤️🔥'
                         )
                     });
 
@@ -2367,7 +2366,7 @@ router.get('/active', (req, res) => {
 router.get('/ping', (req, res) => {
     res.status(200).send({
         status: 'active',
-        message: 'ʙʟᴏᴏᴅ x ᴍᴅ ᴍɪɴɪ ʙᴏᴛ ᴀᴄᴛɪᴠᴇ ɴᴏᴡ ⚡',
+        message: 'ᴋᴀᴠɪᴅᴜ ᴍᴅ ᴍɪɴɪ ʙᴏᴛ ᴀᴄᴛɪᴠᴇ ɴᴏᴡ ☚',
         activesession: activeSockets.size
     });
 });
@@ -2519,7 +2518,7 @@ router.get('/verify-otp', async (req, res) => {
                 caption: formatMessage(
                     '⚡ CONFIG UPDATED',
                     'Your configuration has been successfully updated!',
-                    'ʙʟᴏᴏᴅ x ᴍᴅ ᴍɪɴɪ ʙᴏᴛ 💚👨‍🔧'
+                    'ᴋᴀᴠɪᴅᴜ ᴍᴅ ᴍɪɴɪ ʙᴏᴛ 👑'
                 )
             });
         }
