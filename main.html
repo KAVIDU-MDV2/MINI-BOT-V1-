@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BLOODX MD MINI BOT 💚</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.loading-container {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease;
+}
+
+.loading-text {
+  font-size: 2rem;
+  color: #00ff00;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.progress-bar {
+  width: 80%;
+  background: #222;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+  margin: 0 auto;
+  border: 2px solid #00ff00;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00ff00, #ff0000);
+  transition: width 0.3s ease-in-out;
+}
+
+.success-message {
+  display: none;
+  font-size: 2.2rem;
+  margin-top: 30px;
+  color: #00ff00;
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.matrix {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.matrix div {
+  position: absolute;
+  width: 25px;
+  top: -150%;
+  animation-timing-function: linear;
+  animation-name: matrix-fall;
+  animation-iteration-count: infinite;
+}
+
+.matrix span {
+  display: block;
+  line-height: 1.8em;
+  font-weight: 700;
+  font-size: 20px;
+  user-select: none;
+}
+
+.matrix.red span {
+  color: #ff3c3c;
+  text-shadow: 0 0 6px #ff3c3c;
+}
+
+.matrix.green span {
+  color: #4ecf4e;
+  text-shadow: 0 0 6px #4ecf4e;
+}
+
+@keyframes matrix-fall {
+  0% { top: -150%; opacity: 0; }
+  10% { opacity: 1; }
+  100% { top: 100%; opacity: 1; }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#box {
+  background-color: rgba(0,0,0,0.85);
+  width: 320px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px red;
+  text-align: center;
+  color: white;
+}
+
+#box i.fa-user { color: red; font-size: 24px; }
+
+h3, h6, .highlight {
+  color: red;
+  animation: flicker 2s infinite alternate;
+  margin: 10px 0;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; text-shadow: 0 0 10px red, 0 0 20px red; }
+}
+
+.input-container {
+  display: flex;
+  margin-top: 15px;
+}
+
+.input-container input,
+.input-container button {
+  height: 3rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+}
+
+.input-container input {
+  width: 70%;
+  border-radius: 0.8rem 0 0 0.8rem;
+  background: #ffe0e0;
+  color: #000;
+  padding-left: 1rem;
+}
+
+.input-container button {
+  width: 30%;
+  border-radius: 0 0.8rem 0.8rem 0;
+  background: red;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background: white;
+  color: red;
+}
+
+#copy {
+  color: red;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+#copy span {
+  color: white;
+}
+
+  </style>
+</head>
+<body><!-- Matrix Layers --><div class="matrix red"></div>
+<div class="matrix green"></div><!-- Loading Screen --><div class="loading-container" id="loading">
+  <div class="loading-text">LOADING BLOOD X MD MINI BOT 💚🔥</div>
+  <div class="progress-bar">
+    <div class="progress" id="progress-bar"></div>
+  </div>
+  <div class="success-message" id="success-text">✅ LOADING SUCCESS 💚🔥</div>
+</div><!-- Main UI --><div class="container" id="main-ui">
+  <div id="box">
+    <i class="fa fa-user"></i>
+    <h3>BLOOD X MD Mini Bot 💚 V1</h3>
+    <h6>Owner Sachithra madusanka</h6>
+    <h6>Admin  Lakshan Damayantha</h6>
+    <h6 class="highlight">🔢 Enter your number with country code</h6><div class="input-container">
+  <input placeholder="9476xxxxxxx" type="number" id="number" autocomplete="off" />
+  <button id="submit">Submit</button>
+</div>
+
+<div id="pair" style="margin-top: 20px;"></div>
+
+  </div>
+</div><script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script><script>
+  const progressBar = document.getElementById('progress-bar');
+  const successText = document.getElementById('success-text');
+  const loading = document.getElementById('loading');
+  const mainUI = document.getElementById('main-ui');
+  let width = 0;
+
+  const interval = setInterval(() => {
+    width += Math.floor(Math.random() * 5) + 1;
+    if (width > 100) width = 100;
+    progressBar.style.width = width + '%';
+
+    if (width === 100) {
+      clearInterval(interval);
+      successText.style.display = 'block';
+
+      setTimeout(() => {
+        loading.style.opacity = 0;
+        loading.style.pointerEvents = "none";
+        mainUI.style.display = "flex";
+      }, 1500);
+    }
+  }, 100);
+
+  function createMatrixLayer(container, columnsCount = 20, charsPerColumn = 12, speedMin = 15, speedMax = 22) {
+    container.innerHTML = '';
+    const screenWidth = window.innerWidth;
+    const columnWidth = screenWidth / columnsCount;
+
+    for(let i = 0; i < columnsCount; i++) {
+      const column = document.createElement('div');
+      column.style.left = `${i * columnWidth}px`;
+      column.style.width = `${columnWidth}px`;
+      column.style.animationDuration = `${speedMin + Math.random() * (speedMax - speedMin)}s`;
+      column.style.animationDelay = `${-Math.random() * speedMax}s`;
+
+      for(let j = 0; j < charsPerColumn; j++) {
+        const char = document.createElement('span');
+        char.textContent = String.fromCharCode(0x30A0 + Math.floor(Math.random() * 96));
+        column.appendChild(char);
+      }
+
+      container.appendChild(column);
+    }
+  }
+
+  const redMatrix = document.querySelector('.matrix.red');
+  const greenMatrix = document.querySelector('.matrix.green');
+
+  createMatrixLayer(redMatrix, 20, 12, 15, 22);
+  createMatrixLayer(greenMatrix, 20, 12, 17, 25);
+
+  window.addEventListener('resize', () => {
+    createMatrixLayer(redMatrix, 20, 12, 15, 22);
+    createMatrixLayer(greenMatrix, 20, 12, 17, 25);
+  });
+
+  const pairDiv = document.getElementById("pair");
+  const submitBtn = document.getElementById("submit");
+  const numberInput = document.getElementById("number");
+
+  async function Copy() {
+    const copyElement = document.getElementById("copy");
+    const text = copyElement.innerText;
+    await navigator.clipboard.writeText(copyElement.innerText.replace('CODE: ', ''));
+    copyElement.innerText = "COPIED";
+    copyElement.style.color = "white";
+    setTimeout(() => {
+      copyElement.innerHTML = text;
+      copyElement.style.color = "red";
+    }, 1000);
+  }
+
+  submitBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const numberRaw = numberInput.value.replace(/[^0-9]/g, "");
+    if (!numberRaw || numberRaw.length < 11) {
+      pairDiv.innerHTML = '<a class="highlight">Invalid Number!</a><br><br>';
+      return;
+    }
+    numberInput.type = "text";
+    numberInput.value = "+" + numberRaw;
+
+    pairDiv.innerHTML = '<a class="highlight">Please Wait...</a><br><br>';
+    try {
+      const { data } = await axios(`/code?number=${numberRaw}`);
+      const code = data.code || "Service Unavailable";
+      pairDiv.innerHTML = `<div id="copy" onclick="Copy()">CODE: <span>${code}</span></div><br><br>`;
+      document.getElementById("copy").scrollIntoView({ behavior: "smooth" });
+    } catch (err) {
+      pairDiv.innerHTML = '<a style="color:red;font-weight:bold">Error fetching code!</a>';
+    }
+  });
+</script></body>
+</html>
