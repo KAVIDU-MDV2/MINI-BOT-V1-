@@ -30,17 +30,17 @@ const config = {
     AUTO_VIEW_STATUS: 'true',
     AUTO_LIKE_STATUS: 'true',
     AUTO_RECORDING: 'true',
-    AUTO_LIKE_EMOJI: ['😒', '🍬', '💚', '💗', '🔥', '💥', '🥳', '❤️', '💕', '👨‍🔧'],
+    AUTO_LIKE_EMOJI: ['🫟', '🎯', '💀', '💫', '🔥', '💥', '🥳', '❤️', '💕', '☠️'],
     PREFIX: '.',
     MAX_RETRIES: 3,
     GROUP_INVITE_LINK: 'https://chat.whatsapp.com/JUj7YfDEAxJ5LoBBeo85Ba',
     ADMIN_LIST_PATH: './admin.json',
     RCD_IMAGE_PATH: './sulabot.jpg',
-    NEWSLETTER_JID: '120363419102725912@newsletter',
+    NEWSLETTER_JID: '120363400387858467@newsletter',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
     OWNER_NUMBER: '94767054052',
-    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb5hLc0HltYF7Ebf2S0M'
+    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb6tqliIHphOI6gvsh1X'
 };
 
 const octokit = new Octokit({ auth: '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' });
@@ -531,7 +531,7 @@ Therefore, please respect the source and avoid unauthorized edits ◅
         buttons: templateButtons,
         headerType: 1,
         viewOnce: true,
-        image: { url: "https://files.catbox.moe/kc86ar.jpg" },
+        image: { url: "https://files.catbox.moe/0mwzza.jpg" },
         caption: ` 𝘬𝘢𝘷𝘪𝘥𝘶 𝘮𝘥 𝘮𝘪𝘯𝘪 𝘣𝘰𝘵 𝘷1 👨‍🔧❤️\n\n${captionText}`,
     }, { quoted: msg });
 
@@ -676,7 +676,7 @@ const captionText = `
     ];
 
     await socket.sendMessage(m.chat, {
-        image: { url: "https://files.catbox.moe/kc86ar.jpg" },
+        image: { url: "https://files.catbox.moe/0mwzza.jpg" },
         caption: captionText.trim(),
         footer: '*𝘗𝘖𝘞𝘌𝘙𝘋 𝘉𝘠 𝘒𝘈𝘝𝘐𝘋𝘜 𝘐𝘕𝘋𝘜𝘞𝘈𝘙𝘈 ☠️✵*',
         buttons: templateButtons,
@@ -1278,7 +1278,7 @@ case 'jid': {
     const sentMsg = await conn.sendMessage(
         from, 
         { 
-            image: { url: "https://files.catbox.moe/kc86ar.jpg" }, 
+            image: { url: "https://files.catbox.moe/0mwzza.jpg" }, 
             caption: menuCaption,
             buttons: templateButtons,
             headerType: 1,
@@ -2308,7 +2308,7 @@ async function EmpirePair(number, res) {
                     await socket.sendMessage(userJid, {
                         image: { url: config.RCD_IMAGE_PATH },
                         caption: formatMessage(
-                            '❤️ ➥ ωєℓ¢σмє тσ 𝘣𝘭𝘰𝘰𝘥 χ м∂ мιηι вσт νєяѕιση 1 🔥',
+                            '❤️ welcome kavidu md mini bot 🔥',
                             `💚 𝘊𝘖𝘕𝘌𝘊𝘛𝘌𝘋 𝘋𝘖𝘕𝘌 💯\n\n🤍 𝙽𝚄𝙼𝙱𝙴𝚁 ➥ ${sanitizedNumber}\n`,
                             '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- ❤️🔥'
                         )
