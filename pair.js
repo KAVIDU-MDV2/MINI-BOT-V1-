@@ -464,15 +464,15 @@ socket.downloadAndSaveMediaMessage = async(message, filename, attachExtension = 
     const captionText = `
 * ✵𝘒𝘈𝘝𝘐𝘋𝘜 𝘔𝘋 𝘔𝘐𝘕𝘐 𝘉𝘖𝘛 𝘈𝘓𝘐𝘝𝘌 𝘕𝘖𝘞✵ *
 
-*╭────◅●◆●▻────➣*
-*│┌─────────➣*
-*││ʙᴏᴛ ᴜᴘ ᴛɪᴍᴇ ➟ ${hours}h ${minutes}m ${seconds}s* 
-*││ʙᴏᴛᴀᴄᴛɪᴠᴇ ᴄᴏᴜɴᴛ ➟ ${activeSockets.size}* 
-*││ᴍɪɴɪ ᴠᴇʀꜱɪᴏɴ ➟ 1.0.0 ᴠ* 
-*││ᴅᴇᴘʟᴏʏ ᴘʟᴀᴛꜰʀᴏᴍ ➟ [ VPS ]* 
-*││ᴍɪɴɪ ʙᴏᴛ ᴏᴡɴᴇʀ ➟ 94767054052*
-*│└─────────➣*
-*╰────◅●◆●▻────➢*
+✯╭────◅༺༻────⫸ｯ
+✯│┌─────────⫸*
+✯││ʙᴏᴛ ᴜᴘ ᴛɪᴍᴇ ➟ ${hours}h ${minutes}m ${seconds}s* 
+✯││ʙᴏᴛᴀᴄᴛɪᴠᴇ ᴄᴏᴜɴᴛ ➟ ${activeSockets.size}* 
+✯││ᴍɪɴɪ ᴠᴇʀꜱɪᴏɴ ➟ 1.0.0 ᴠ* 
+✯││ᴅᴇᴘʟᴏʏ ᴘʟᴀᴛꜰʀᴏᴍ ➟ [ VPS ]* 
+✯││ᴍɪɴɪ ʙᴏᴛ ᴏᴡɴᴇʀ ➟ 94767054052*
+✯│└─────────⫸*
+✯╰────༺༻────⫸ｯ
 
 
 ➟ This is the result of our team's hard work.
@@ -1295,7 +1295,7 @@ case 'jid': {
 case 'owner': {
     const ownerNumber = '+94767054052';
     const ownerName = '𝙺𝙰𝚅𝙸𝙳𝚄 𝙸𝙽𝙳𝚄𝚆𝙰𝚁𝙰';
-    const organization = '*𝗞𝗔𝗩𝗜𝗗𝗨 𝙈𝘿 𝘽𝙊𝙏 𝘾𝙍𝙀𝘼𝙏𝙊𝙍 & 𝙊𝙒𝙉𝙀𝙍  💚👨‍🔧🔥*';
+    const organization = '*𝗞𝗔𝗩𝗜𝗗𝗨 𝙈𝘿 𝘽𝙊𝙏 𝘾𝙍𝙀𝘼𝙏𝙊𝙍 & 𝙊𝙒𝙉𝙀𝙍  👑💥*';
 
     const vcard = 'BEGIN:VCARD\n' +
                   'VERSION:3.0\n' +
@@ -1700,7 +1700,7 @@ case 'mp3play': {
     }
 
     try {
-        const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp3?url=${encodeURIComponent(url)}`;
+        const apiUrl = `https://apis.sandarux.sbs/api/yt/ytdl?url=${encodeURIComponent(url)}`;
         const { data } = await axios.get(apiUrl);
 
         if (!data || !data.result?.download_url) {
@@ -1727,7 +1727,7 @@ case 'mp3doc': {
     }
 
     try {
-        const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp3?url=${encodeURIComponent(url)}`;
+        const apiUrl = `https://apis.sandarux.sbs/api/yt/ytdl?url=${encodeURIComponent(url)}`;
         const { data } = await axios.get(apiUrl);
 
         if (!data || !data.result?.download_url) {
@@ -1755,7 +1755,7 @@ case 'mp3ptt': {
     }
 
     try {
-        const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp3?url=${encodeURIComponent(url)}`;
+        const apiUrl = `https://apis.sandarux.sbs/api/yt/ytdl?url=${encodeURIComponent(url)}`;
         const { data } = await axios.get(apiUrl);
 
         if (!data || !data.result?.download_url) {
