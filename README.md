@@ -1,2 +1,2 @@
-# BLOOD-XMD-MINI-V1
-Fucked you blood-xmd 📥
+# KAVIDU-MD-MINI-V1
+මෙන්න හුකනො 😌
