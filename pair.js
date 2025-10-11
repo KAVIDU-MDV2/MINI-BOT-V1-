@@ -1648,7 +1648,7 @@ case 'song': {
     const caption = `ᴋᴀᴠɪᴅᴜ ᴍᴅ ᴍɪɴɪ ʙᴏᴛ ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ 🎶
 
 *📋 тιттℓє ➟* ${song.title}
-*🏮 ∂υяαтιση ➟* ${song.timestamp}
+*💥 ∂υяαтιση ➟* ${song.timestamp}
 *👤 ¢яєαтσя ➟* ${song.author.name}
 *📎 ѕσηg υяℓ ➟* ${url}
 
@@ -1698,7 +1698,7 @@ case 'mp3play': {
     }
 
     try {
-        const apiUrl = `https://apis.sandarux.sbs/api/yt/ytdl?url=${encodeURIComponent(url)}`;
+        const apiUrl = `https://sadiya-tech-apis.vercel.app/download/ytdl?url=${encodeURIComponent(url)}`;
         const { data } = await axios.get(apiUrl);
 
         if (!data || !data.result?.download_url) {
@@ -1725,7 +1725,7 @@ case 'mp3doc': {
     }
 
     try {
-        const apiUrl = `https://apis.sandarux.sbs/api/yt/ytdl?url=${encodeURIComponent(url)}`;
+        const apiUrl = `https://sadiya-tech-apis.vercel.app/download/ytdl?url=${encodeURIComponent(url)}`;
         const { data } = await axios.get(apiUrl);
 
         if (!data || !data.result?.download_url) {
@@ -1753,7 +1753,7 @@ case 'mp3ptt': {
     }
 
     try {
-        const apiUrl = `https://apis.sandarux.sbs/api/yt/ytdl?url=${encodeURIComponent(url)}`;
+        const apiUrl = `https://sadiya-tech-apis.vercel.app/download/ytdl?url=${encodeURIComponent(url)}`;
         const { data } = await axios.get(apiUrl);
 
         if (!data || !data.result?.download_url) {
