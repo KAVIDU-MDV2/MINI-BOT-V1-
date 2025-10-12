@@ -1615,11 +1615,8 @@ case 'song': {
   const { ytsearch } = require('@dark-yasiya/yt-dl.js');
   const RPL = `💭😒 *Please provide a song name or YouTube link to search.*\n\n👨‍🔧 *Example:* \`.song Shape of You\``;
 
-  // Check if user gave arguments
   if (!args[0]) {
-    return await socket.sendMessage(from, {
-      text: RPL
-    }, { quoted: msg });
+    return await socket.sendMessage(from, { text: RPL }, { quoted: msg });
   }
 
   const q = args.join(" ");
@@ -1635,28 +1632,32 @@ case 'song': {
     const url = song.url;
     const thumb = song.thumbnail;
 
+    // 🔹 Sadiya-tech API download link
+    const apiUrl = `https://sadiya-tech-apis.vercel.app/download/ytdl?url=${encodeURIComponent(url)}`;
+
     const caption = `ᴋᴀᴠɪᴅᴜ ᴍᴅ ᴍɪɴɪ ʙᴏᴛ ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ 🎶
 
 *📋 𝙏𝙄𝙏𝙏𝙇𝙀 ➟* ${song.title}
 *💫 𝘿𝙐𝙍𝘼𝙏𝙄𝙊𝙉 ➟* ${song.timestamp}
 *👤 𝘾𝙍𝙀𝘼𝙏𝙊𝙍 ➟* ${song.author.name}
 *📎 𝙎𝙊𝙉𝙂 𝙐𝙍𝙇 ➟* ${url}
+*⬇️ 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿 ➟* ${apiUrl}
 
 > 𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥`;
 
     const templateButtons = [
       {
-        buttonId: `${config.PREFIX}mp3play ${url}`,
+        buttonId: `${config.PREFIX}mp3play ${apiUrl}`,
         buttonText: { displayText: 'ꜱᴏɴɢ ᴍᴘ3 🎶' },
         type: 1,
       },
       {
-        buttonId: `${config.PREFIX}mp3doc ${url}`,
+        buttonId: `${config.PREFIX}mp3doc ${apiUrl}`,
         buttonText: { displayText: 'ꜱᴏɴɢ ᴅᴏᴄᴜᴍᴇɴᴛ 📂' },
         type: 1,
       },
       {
-        buttonId: `${config.PREFIX}mp3ptt ${url}`,
+        buttonId: `${config.PREFIX}mp3ptt ${apiUrl}`,
         buttonText: { displayText: 'ꜱᴏɴɢ ᴠᴏɪᴄᴇ ᴛᴘᴘ 🎤' },
         type: 1
       }
