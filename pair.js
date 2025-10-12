@@ -39,7 +39,7 @@ const config = {
     NEWSLETTER_JID: '120363419102725912@newsletter',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
-    OWNER_NUMBER: '94761332610',
+    OWNER_NUMBER: '94767054052',
     CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb5hLc0HltYF7Ebf2S0M'
 };
 
@@ -529,7 +529,7 @@ Therefore, please respect the source and avoid unauthorized edits ◅
         buttons: templateButtons,
         headerType: 1,
         viewOnce: true,
-        image: { url: "https://files.catbox.moe/kc86ar.jpg" },
+        image: { url: "https://files.catbox.moe/0mwzza.jpg" },
         caption: ` 𝗞𝗔𝗩𝗜𝗗𝗨 𝗠𝗗 𝗠𝗜𝗡𝗜 𝗩1 💣💥\n\n${captionText}`,
     }, { quoted: msg });
 
@@ -669,7 +669,7 @@ const captionText = `
     ];
 
     await socket.sendMessage(m.chat, {
-        image: { url: "https://files.catbox.moe/kc86ar.jpg" },
+        image: { url: "https://files.catbox.moe/0mwzza.jpg" },
         caption: captionText.trim(),
         footer: '*CREATE BY KAVIDU INDUWARA 🔰*',
         buttons: templateButtons,
@@ -801,7 +801,7 @@ case 'aiimage': {
 
   if (!prompt) {
     return await socket.sendMessage(sender, {
-      text: '👨‍🔧💚 *Please provide a prompt to generate an AI image.*'
+      text: '🔰 *Please provide a prompt to generate an AI image.*'
     });
   }
 
@@ -1081,7 +1081,7 @@ case 'jid': {
                         `👤 *𝙎𝙀𝙉𝘿𝙀𝙍 ➟* ${quoted.sender || "Unknown"}\n` +
                         `👥 *𝙋𝙍𝘼𝘾𝙏𝙄𝙈𝙀𝙉𝙏 ➟* ${quoted.participant || "N/A"}\n` +
                         `💭 *𝘾𝙃𝘼𝙏 ➟* ${quoted.chat || chatJid}`
-					    `*BLOOD-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🔥*`
+					    `*𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🔥*`
                 });
 
             default:
@@ -1144,15 +1144,15 @@ case 'jid': {
 
         const url = data.url;
         const desc = `
- [ *BLOOD 𝘟 𝘔𝘐𝘕𝘐 𝘝𝘖𝘐𝘊𝘌 𝘛𝘗𝘗 💚* ]
+ [ *𝘒𝘈𝘝𝘐𝘋𝘜 𝘔𝘋 𝘔𝘐𝘕𝘐 𝘝𝘖𝘐𝘊𝘌 𝘛𝘗𝘗 💫* ]
 
-📋 *ᴛɪᴛᴛʟᴇ ➟* ${data.title} ❤️
+📋 *ᴛɪᴛᴛʟᴇ ➟* ${data.title} ☠️
 
-⌛ *ᴅᴜʀᴀᴛɪᴏɴ ➟* ${data.timestamp} ❤️
+⌛ *ᴅᴜʀᴀᴛɪᴏɴ ➟* ${data.timestamp} ☠️
 
-📤 *ᴜᴘʟᴏᴛᴇᴅ ➟:* ${data.ago} ❤️
+📤 *ᴜᴘʟᴏᴛᴇᴅ ➟:* ${data.ago} ☠️
 
-> 𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥
+> 𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 🔰
 `;
 
         await socket.sendMessage(sender, {
@@ -1205,11 +1205,11 @@ case 'jid': {
 
 *╭────◅●◆●▻────➣*
 *│┌──────➣*
-*││ ʙᴏᴛ ᴜᴘ ᴛɪᴍᴇ ➟ ${hours}h ${minutes}m ${seconds}s*
-*││ ʙᴏᴛᴀᴄᴛɪᴠᴇ ᴄᴏᴜɴᴛ ➟ ${activeSockets.size}*
-*││ ᴍɪɴɪ ᴠᴇʀꜱɪᴏɴ ➟ 1.0.0 ᴠ*
-*││ ᴅᴇᴘʟᴏʏ ᴘʟᴀᴛꜰʀᴏᴍ ➟ Heroku ❲ ꜰʀᴇᴇ ❳*
-*││ ᴍɪɴɪ ʙᴏᴛ ᴏᴡɴᴇʀ ➟ 94761332610*
+*││ 𝕓𝕠𝕥 𝕦𝕡 𝕥𝕚𝕞𝕖 ➟ ${hours}h ${minutes}m ${seconds}s*
+*││ 𝕓𝕠𝕥𝕒𝕔𝕥𝕚𝕧𝕖 𝕔𝕠𝕦𝕟𝕥𝕖 ➟ ${activeSockets.size}*
+*││ 𝕞𝕚𝕟𝕚 𝕧𝕖𝕣𝕤𝕚𝕠𝕟 ➟ 1.0.0 ᴠ*
+*││ 𝕕𝕖𝕡𝕝𝕠𝕪 𝕡𝕝𝕒𝕥𝕗𝕣𝕠𝕞 ➟ Heroku ❲ ꜰʀᴇᴇ ❳*
+*││ 𝕞𝕚𝕟𝕚 𝕓𝕠𝕥 𝕠𝕨𝕟𝕖𝕣 ➟ 94767054052*
 *│└──────➣*
 *╰────◅●◆●▻────➢*
 
@@ -1271,7 +1271,7 @@ case 'jid': {
     const sentMsg = await conn.sendMessage(
         from, 
         { 
-            image: { url: "https://files.catbox.moe/kc86ar.jpg" }, 
+            image: { url: "https://files.catbox.moe/0mwzza.jpg" }, 
             caption: menuCaption,
             buttons: templateButtons,
             headerType: 1,
