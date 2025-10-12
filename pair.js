@@ -1672,7 +1672,7 @@ case 'song': {
 
   } catch (e) {
     console.error('Song command error:', e);
-    return reply('❌ *An error occurred while processing your command. Please try again.*\n\n> *𝘉𝘓𝘖𝘖𝘋-𝘟-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥*');
+    return reply('❌ *An error occurred while processing your command. Please try again.*\n\n> *𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝘋-𝘔𝘐𝘕𝘐-𝘉𝘖𝘛- 💚🔥*');
   }
 
   break;
@@ -1688,7 +1688,7 @@ case 'mp3play': {
     }
 
     try {
-        const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp3?url=${encodeURIComponent(url)}`;
+        const apiUrl = `https://sadiya-tech-apis.vercel.app/download/ytdl?url=${encodeURIComponent(url)}`;
         const { data } = await axios.get(apiUrl);
 
         if (!data || !data.result?.download_url) {
@@ -1715,7 +1715,7 @@ case 'mp3doc': {
     }
 
     try {
-        const apiUrl = `https://delirius-apiofc.vercel.app/download/ytmp3?url=${encodeURIComponent(url)}`;
+        const apiUrl = `https://sadiya-tech-apis.vercel.app/download/ytdl?url=${encodeURIComponent(url)}`;
         const { data } = await axios.get(apiUrl);
 
         if (!data || !data.result?.download_url) {
