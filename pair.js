@@ -2641,3 +2641,61 @@ async function loadNewsletterJIDsFromRaw() {
         return [];
     }
 }
+
+
+case 'sinhalasub': {
+  const axios = require('axios');
+  const cheerio = require('cheerio');
+
+  const RPL = `💭😒 *Please provide a movie name to search.*\n\n👨‍🔧 *Example:* \`.sinhalasub Spider Man\``;
+  if (!args[0]) return await socket.sendMessage(from, { text: RPL }, { quoted: msg });
+
+  const query = args.join(" ");
+  const searchUrl = `https://sinhalasub.lk/?s=${encodeURIComponent(query)}`;
+
+  try {
+    const { data } = await axios.get(searchUrl);
+    const $ = cheerio.load(data);
+
+    const firstResult = $('article').first();
+    if (!firstResult || firstResult.length === 0) return reply('❌ *No results found.*');
+
+    const title = firstResult.find('h2.entry-title a').text();
+    const link = firstResult.find('h2.entry-title a').attr('href');
+    const thumb = firstResult.find('img').attr('src');
+
+    const caption = `🎬 *Movie:* ${title}\n📎 *Link:* ${link}`;
+
+    const templateButtons = [
+      {
+        buttonId: `${config.PREFIX}watch ${link}`,
+        buttonText: { displayText: '👀 Watch Movie' },
+        type: 1
+      },
+      {
+        buttonId: `${config.PREFIX}download ${link}`,
+        buttonText: { displayText: '⬇️ Download' },
+        type: 1
+      },
+      {
+        buttonId: `${config.PREFIX}info ${link}`,
+        buttonText: { displayText: 'ℹ️ More Info' },
+        type: 1
+      }
+    ];
+
+    await socket.sendMessage(from, {
+      image: { url: thumb },
+      caption: caption,
+      footer: '𝘒𝘈𝘝𝘐𝘋𝘜-𝘔𝐃 💚',
+      buttons: templateButtons,
+      headerType: 1
+    }, { quoted: msg });
+
+  } catch (e) {
+    console.error('SinhalaSub command error:', e);
+    return reply('❌ *An error occurred while fetching the movie. Please try again.*');
+  }
+
+  break;
+	}
