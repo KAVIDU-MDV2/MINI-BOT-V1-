@@ -1,4 +1,4 @@
-const express = require('express');
+;const express = require('express');
 const fs = require('fs-extra');
 const path = require('path');
 const { exec } = require('child_process');
@@ -647,19 +647,45 @@ const captionText = `
 	
     const templateButtons = [
         {
-            buttonId: `${config.PREFIX}ping`,
-            buttonText: { displayText: 'ᴍɪɴɪ ʙᴏᴛ ᴘɪɴɢ ꜱɪɢɴᴀʟ' },
-            type: 1,
-        },
-        {
-            buttonId: `${config.PREFIX}alive`,
-            buttonText: { displayText: ' ᴍɪɴɪ ʙᴏᴛ ᴀʟɪᴠᴇ' },
-            type: 1,
-        },
-        {
-            buttonId: `${config.PREFIX}owner`,
-            buttonText: { displayText: 'ᴍɪɴɪ ʙᴏᴛ ᴄᴏɴᴛᴀᴄᴛ ᴏᴡɴᴇʀ' },
-            type: 1
+            buttonId: 'action',
+            buttonText: {
+                displayText: ' ◅ ❤️👨‍🔧ᴍᴇɴᴜ ᴏᴘᴄᴛɪᴏɴꜱ ▻'
+            },
+            type: 4,
+            nativeFlowInfo: {
+                name: 'single_select',
+                paramsJson: JSON.stringify({
+                    title: 'TAB-AND-SELECTION ❕',
+                    sections: [
+                        {
+                            title: ` ᴋᴀᴠɪᴅᴜ ᴍᴅ ᴍɪɴɪ ʙᴏᴛ 💣💥`,
+                            highlight_label: '',
+                            rows: [
+                                {
+                                    title: '❲ 𝘋𝘖𝘞𝘕𝘓𝘖𝘈𝘋 𝘔𝘌𝘕𝘜  🔰 ❳',
+                                    description: '',
+                                    id: `${config.PREFIX}downloadmenu`,
+                                },
+								{
+                                    title: '❲ 𝘍𝘜𝘕 𝘔𝘌𝘕𝘜  🔰 ❳',
+                                    description: '',
+                                    id: `${config.PREFIX}funmenu`,
+                                },
+								{
+                                    title: '❲ 𝘎𝘙𝘖𝘜𝘗 𝘔𝘌𝘕𝘜  🔰 ❳',
+                                    description: '',
+                                    id: `${config.PREFIX}groupmenu`,
+                                },
+                                {
+                                    title: '❲ 𝘖𝘞𝘕𝘌𝘙 𝘔𝘌𝘕𝘜 👑 ❳',
+                                    description: 'ᴋᴀᴠɪᴅᴜ ᴍᴅ ᴍɪɴɪ ʙᴏᴛ 👨‍🔧⚡',
+                                    id: `${config.PREFIX}ownermenu`,
+                                },
+                            ],
+                        },
+                    ],
+                }),
+            },
         }
     ];
 
