@@ -675,7 +675,116 @@ const captionText = `
 
   break;
 }
-                case 'chr': {
+
+case 'downloadmenu': {
+    const caption = `
+╭─〔 *📥 DOWNLOAD MENU* 〕─╮
+🎬 .fb <url> — Facebook Downloader  
+🎶 .song <name> — Song Download  
+🎞 .tiktok <url> — TikTok Downloader  
+🎥 .ig <url> — Instagram Reel  
+🎧 .ytmp3 <url> — YouTube to MP3  
+📹 .ytmp4 <url> — YouTube to MP4  
+╰────────────────────╯
+`;
+    const buttons = [
+        { buttonId: `${config.PREFIX}menu`, buttonText: { displayText: '♟️ BACK TO MAIN MENU' }, type: 1 }
+    ];
+
+    await socket.sendMessage(m.chat, {
+        image: { url: "https://files.catbox.moe/0mwzza.jpg" }, // 📥 Download menu image
+        caption,
+        footer: '*📥 Download Anything — KAVIDU MD MINI BOT 🔰*',
+        buttons,
+        headerType: 4
+    }, { quoted: msg });
+    break;
+}
+
+
+// 🎮 FUN MENU
+case 'funmenu': {
+    const caption = `
+╭─〔 *🎮 FUN MENU* 〕─╮
+🤣 .joke — Random Jokes  
+🎭 .meme — Funny Meme  
+🎲 .quote — Random Quote  
+🎨 .anime — Random Anime Pic  
+🐱 .cat — Random Cat Pic  
+🐶 .dog — Random Dog Pic  
+╰────────────────────╯
+`;
+    const buttons = [
+        { buttonId: `${config.PREFIX}menu`, buttonText: { displayText: '♟️ BACK TO MAIN MENU' }, type: 1 }
+    ];
+
+    await socket.sendMessage(m.chat, {
+        image: { url: "https://files.catbox.moe/0mwzza.jpg" }, // 🎮 Fun menu image
+        caption,
+        footer: '*🎮 Fun Commands — KAVIDU MD MINI BOT 🔰*',
+        buttons,
+        headerType: 4
+    }, { quoted: msg });
+    break;
+}
+
+
+// 👥 GROUP MENU
+case 'groupmenu': {
+    const caption = `
+╭─〔 *👥 GROUP MENU* 〕─╮
+🔰 .tagall — Tag All  
+🚫 .kick <@user> — Remove  
+➕ .add <number> — Add  
+🛡 .promote <@user> — Make Admin  
+⚙️ .demote <@user> — Remove Admin  
+🔒 .close — Close Group  
+🔓 .open — Open Group  
+╰────────────────────╯
+`;
+    const buttons = [
+        { buttonId: `${config.PREFIX}menu`, buttonText: { displayText: '♟️ BACK TO MAIN MENU' }, type: 1 },
+	];
+
+    await socket.sendMessage(m.chat, {
+        image: { url: "https://files.catbox.moe/0mwzza.jpg" }, // 👥 Group menu image
+        caption,
+        footer: '*👥 Group Management — KAVIDU MD MINI BOT 🔰*',
+        buttons,
+        headerType: 4
+    }, { quoted: msg });
+    break;
+}
+
+
+// 👑 OWNER MENU
+case 'ownermenu': {
+    const caption = `
+╭─〔 *👑 OWNER MENU* 〕─╮
+🧩 .block <@user> — Block  
+💬 .unblock <@user> — Unblock  
+🚀 .restart — Restart Bot  
+📁 .update — Update Bot  
+🧠 .eval <code> — Run Code  
+📢 .broadcast — Message All  
+🔒 .mode — Public/Private  
+╰────────────────────╯
+`;
+    const buttons = [
+        { buttonId: `${config.PREFIX}menu`, buttonText: { displayText: '♟️ BACK TO MAIN MENU' }, type: 1 },
+    ];
+
+    await socket.sendMessage(m.chat, {
+        image: { url: "https://files.catbox.moe/0mwzza.jpg" }, // 👑 Owner menu image
+        caption,
+        footer: '*👑 Owner Controls — KAVIDU MD MINI BOT 🔰*',
+        buttons,
+        headerType: 4
+    }, { quoted: msg });
+    break;
+		}
+					
+				case 'chr': {
     const q = args.join(" ");
 
     if (!q.includes(",")) {
