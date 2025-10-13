@@ -597,7 +597,7 @@ Therefore, please respect the source and avoid unauthorized edits ◅
     break;
 }   
 
-case 'mainmenu': {
+case 'menu': {
 	
     const startTime = socketCreationTime.get(number) || Date.now();
     const uptime = Math.floor((Date.now() - startTime) / 1000);
@@ -1186,7 +1186,7 @@ case 'jid': {
 				}
 
     
-	case 'menu': {
+	case 'system': {
     // Calculate bot uptime
     const startTime = socketCreationTime.get(number) || Date.now();
     const uptime = Math.floor((Date.now() - startTime) / 1000);
