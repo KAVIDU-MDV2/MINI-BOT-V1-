@@ -623,23 +623,18 @@ const captionText = `
 *ＡＣＴＩＶＥ - ＦＵＬＬ- ＣＯＭＭＡＮＤ*
 
  ┌─────🄱🄾🅃🄲🄼🄳🄻🄸🅂🅃───⫸
-❖│1.𝗔𝗟𝗜𝗩𝗘 
-❖│2.𝗠𝗘𝗡𝗨 
-❖│3.𝗦𝗬𝗦𝗧𝗘𝗠 
-❖│4.𝗦𝗢𝗡𝗚 
-❖│5.𝗙𝗕 
-❖│6.𝗧𝗧 
-❖│7.𝗩𝗢𝗜𝗖𝗘 
-❖│8.𝗙𝗔𝗡𝗖𝗬 
-❖│9.𝗔𝗜𝗜𝗠𝗔𝗚𝗘
-❖│10.𝗝𝗜𝗗 
-❖│11.𝗖𝗛𝗥
-❖│12.𝗙𝗖 
-❖│13.𝗣𝗜𝗡𝗚 
-❖│14.𝗗𝗘𝗟𝗘𝗧𝗘𝗠𝗘 
+❖│.𝗔𝗟𝗜𝗩𝗘 
+❖│.𝗠𝗘𝗡𝗨
+❖│.𝗢𝗪𝗡𝗘𝗥
+❖│.𝗦𝗬𝗦𝗧𝗘𝗠 
+❖│.𝗦𝗢𝗡𝗚 
+❖│.𝗙𝗕 
+❖│.𝗧𝗧  
+❖│.𝗣𝗜𝗡𝗚 
+❖│.𝗗𝗘𝗟𝗘𝗧𝗘𝗠𝗘 
  └───────────⫸
 
-*_ＡＵＴＯＭＡＴＩＣＡＬＹ - ＳＥＴＴＩＮＧＳ ⚙️_*
+*Not all cmds work the same. I will give you all cmds in the next update.*
 
 ☛ ᴀᴜᴛᴏ ꜱᴛᴀᴛᴜꜱ ꜱᴇᴇɴ 
 ☛ ᴀᴜᴛᴏ ꜱᴛᴀᴛᴜꜱ ʀᴇᴀᴄᴛ
@@ -887,32 +882,47 @@ case 'ownermenu': {
     
 		
 	break;
-}
+					
 case 'ping': {
-    const os = require("os")
-    const start = Date.now();
+    var inital = new Date().getTime();
+    let ping = await socket.sendMessage(sender, { text: '*_Pinging to Module..._* ❗' }, { quoted: adhimini });
+    var final = new Date().getTime();
 
-    const loading = await socket.sendMessage(m.chat, {
-        text: "𝗞𝗔𝗩𝗜𝗗𝗨 𝗠𝗗 𝗠𝗔𝗜𝗡 𝗣𝗜𝗡𝗚 💥🛰️"
-    }, { quoted: msg });
+    return await socket.sendMessage(sender, { text: '❗ *Pong ' + (final - inital) + ' Ms*' }, { edit: ping.key, quoted: adhimini });
+                }
+                case 'owner': {
+                    await socket.sendMessage(sender, { 
+                        react: { 
+                            text: "👤",
+                            key: msg.key 
+                        } 
+                    });
+                    
+                    const ownerContact = {
+                        contacts: {
+                            displayName: 'My Contacts',
+                            contacts: [
+                                {
+                                    vcard: 'BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=UTF-8:ꜱᴀᴄʜɪ 😚🤍\nTEL;TYPE=Owner,VOICE:+94761332610\nEND:VCARD',
+                                },
+                                {
+                                vcard: 'BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=UTF-8:ꜱʙᴏɴᴜ 💚🥷\nTEL;TYPE=Coder,VOICE:+94778619890\nEND:VCARD',   
+                                },                        
+                            ],
+                        },
+                    };
 
-    const stages = ["❶", "❶❷", "❶❷❸", "❶❷❸❹", "❶❷❸❹❺"];
-    for (let stage of stages) {
-        await socket.sendMessage(m.chat, { text: stage, edit: loading.key });
-        await new Promise(r => setTimeout(r, 250));
-    }
+                    const ownerLocation = {
+                        location: {
+                            degreesLatitude: 6.9271,
+                            degreesLongitude: 80.5550,
+                            name: 'Sachithra  Address',
+                            address: 'Kegalle , Sri Lanka',
+                        },
+                    };
 
-    const end = Date.now();
-    const ping = end - start;
-
-    await socket.sendMessage(m.chat, {
-        text: `*𝘔𝘐𝘕𝘐 𝘉𝘖𝘛 𝘗𝘐𝘕𝘎* ▻ \`2.01ms\`\n\n ʙᴏᴛ ɪꜱ ᴀᴄᴛɪᴠᴇ ᴛᴏ ꜱɪɢɴᴀʟ🚀*`,
-        edit: loading.key
-    });
-
-    
-    
-			    
+                    await socket.sendMessage(sender, ownerContact);
+                    await socket.sendMessage(sender, ownerLocation);
 
     break;
 	}
