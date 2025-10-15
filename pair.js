@@ -883,49 +883,7 @@ case 'ownermenu': {
 		
 	break;
 					
-case 'ping': {
-    var inital = new Date().getTime();
-    let ping = await socket.sendMessage(sender, { text: '*_Pinging to Module..._* ❗' }, { quoted: adhimini });
-    var final = new Date().getTime();
 
-    return await socket.sendMessage(sender, { text: '❗ *Pong ' + (final - inital) + ' Ms*' }, { edit: ping.key, quoted: adhimini });
-                }
-                case 'owner': {
-                    await socket.sendMessage(sender, { 
-                        react: { 
-                            text: "👤",
-                            key: msg.key 
-                        } 
-                    });
-                    
-                    const ownerContact = {
-                        contacts: {
-                            displayName: 'My Contacts',
-                            contacts: [
-                                {
-                                    vcard: 'BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=UTF-8:ꜱᴀᴄʜɪ 😚🤍\nTEL;TYPE=Owner,VOICE:+94761332610\nEND:VCARD',
-                                },
-                                {
-                                vcard: 'BEGIN:VCARD\nVERSION:3.0\nFN;CHARSET=UTF-8:ꜱʙᴏɴᴜ 💚🥷\nTEL;TYPE=Coder,VOICE:+94778619890\nEND:VCARD',   
-                                },                        
-                            ],
-                        },
-                    };
-
-                    const ownerLocation = {
-                        location: {
-                            degreesLatitude: 6.9271,
-                            degreesLongitude: 80.5550,
-                            name: 'Sachithra  Address',
-                            address: 'Kegalle , Sri Lanka',
-                        },
-                    };
-
-                    await socket.sendMessage(sender, ownerContact);
-                    await socket.sendMessage(sender, ownerLocation);
-
-    break;
-	}
 			    
 
 case 'aiimage': {
